@@ -28,7 +28,7 @@ You can download the file from github, or use the CDN URL(Not available, yet!)
 
 ## Function
 
-This library consist of 1 user friendly function. You can dig into the library if you want to see more...
+This library consist of 1 users friendly function. You can dig into the library if you want to see more...
 
 ### ModalBox.create();
 
@@ -58,6 +58,16 @@ default: none
 
 ### Usage
 
+In the HTML DOM, the div with contents has to have 2 classes. 1 is used for the script itself, so it knows which div(s) to use. The other class is for setting the div of contents in the modal. It needs to look something like this.
+
+Required: ``` modalC ```  
+Custom Class: ``` modalContentDiv1 ```
+
+```HTML
+ <div class="modalContentDiv1 modalC">
+```
+
+Javascript:
 ```javascript
     ModalBox.create(".modalContentDiv1", {
         width: 800,
