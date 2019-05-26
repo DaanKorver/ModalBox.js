@@ -12,7 +12,7 @@ ModalBox.removeFromBody = function () {
     let DOMDivs = document.querySelectorAll(".modalC");
 
     for (let i = 0; i < DOMDivs.length; i++) {
-        document.body.removeChild(DOMDivs[i]);
+        DOMDivs[i].parentElement.removeChild(DOMDivs[i]);
         contents.push(DOMDivs[i]);
     }
 }
@@ -21,7 +21,7 @@ ModalBox.removeFromBody();
 
 ModalBox.removeModal = function (e) {
     if (e.currentTarget.classList.contains("modalbox-bg")) {
-        document.body.removeChild(e.currentTarget);
+        e.currentTarget.parentElement.removeChild(e.currentTarget);
         index--;
     }
 }
@@ -209,16 +209,3 @@ ModalBox.create = function (contentDiv, styleObject) {
     }
 
 }
-
-
-
-let btn = document.getElementById("btn");
-
-btn.addEventListener('click', function () {
-    ModalBox.create(".modalContentDiv1", {
-        width: 800,
-        height: 700,
-        close: false,
-        animation: "slide-up"
-    });
-});
