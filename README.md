@@ -26,56 +26,94 @@ You can download the file from github, or use the CDN URL(Not available, yet!)
 <script src="modalbox.min.js"></script>
 ```
 
-## Function
+## Usage
 
-This library consist of 1 users friendly function. You can dig into the library if you want to see more...
-
-### ModalBox.create();
+This library consist of a couple of functions. First of all you need to make a new instance of a ModalBox. Modalbox has 1 required argument which is the ```template``` argument. the template argument contains your HTML in your modal.   
+for example:
 
 ```javascript
-ModalBox.create(element, properties)
+const modal = new ModalBox({
+  template: 
+  `
+  <div>
+    <h1>Hello World</h1>
+  </div>
+  `
+})
 ```
 
-### - Element
-the ``` element ``` is a required parameter expects a string.
-The element is used for finding the div with contents.
+### - Options
+the ``` options ``` parameter is a required object that contains some options. one of the required options is ```template```.
 
-### - Properties
-the ``` properties ``` is a additional parameter expects a object.
-The properties can customized.
+The other options are
 
-Width: Requires an Int that is set to px  
-Height: Requires an Int that is set to px  
-Close: Requires a Boolean for an additonal close button
-Animation: Requires one of the following animations:
-* Fade
-* Slide Up
-* Slide Down
-* Slide Left
-* Slide Right   
-default: none
+* Width - Requires a number or string (px, percantage, vw)
+* Height - Requires a number or string (px, percantage, vw)
+* Animation - Requires a String
+
+Currently there are ```2``` types of animations
+ * fade
+ * slide
+
+ I hope to add more in the future.
 
 
-### Usage
+ Congrats, you just created your first ModalBox!!
 
-In the HTML DOM, the div with contents has to have 2 classes. 1 is used for the script itself, so it knows which div(s) to use. The other class is for setting the div of contents in the modal. It needs to look something like this.
 
-Required: ``` modalC ```  
-Custom Class: ``` modalContentDiv1 ```
+ ### Open your modal
 
-```HTML
- <div class="modalContentDiv1 modalC">
-```
+ Ofcourse you need to have the ability to open your modal. At this point nothing is showing up.
 
-Javascript:
+ To open your modal you can use the following function
 ```javascript
-    ModalBox.create(".modalContentDiv1", {
-        width: 800,
-        height: 700,
-        close: false,
-        animation: "slide-up"
-    });
+//Defined modal
+const modal = new ModalBox({
+  template: 
+  `
+  <div>
+    <h1>Hello World</h1>
+  </div>
+  `
+})
+
+//Opening modal
+modal.openModal();
 ```
+
+You can bind this function to an EventListener or whatever.
+
+ ### Clsoing your modal
+
+ Ofcourse you also need to have the ability to close your modal. There is a default close button at the top right but maybe you want to create a more creative way to close your modal.
+
+ To close your modal you can use the following function
+```javascript
+//Defined modal
+const modal = new ModalBox({
+  template: 
+  `
+  <div>
+    <h1>Hello World</h1>
+  </div>
+  `
+})
+
+//Closing modal
+modal.closeModal();
+```
+
+You can bind this function to an EventListener or whatever.
+
+### Additional Styling
+
+Maybe you want to have some more freedom of what the modal components look like. Thats why the library has included some classes that you can style.
+
+* Modal background : ```.mb-modalBg```
+* Modal : ```.mb-modal```
+* Close button : ```.mb-close```
+
+Style it as you want
 
 ## Credits
 * Daan Korver
