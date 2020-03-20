@@ -12,7 +12,8 @@ The reason this library was created is to make the creation of modal boxes easie
 
 ModalBox.js is easy to install.
 
-You can download the file from github, or use the CDN URL(Not available, yet!)
+You can download the file from github, or use the CDN URL
+**WARNING THE CDN LINK IS NOT AVAILABLE, YET!!!**
 
 **CDN Install**
 
