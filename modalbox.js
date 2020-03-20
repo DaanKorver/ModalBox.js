@@ -54,6 +54,7 @@ class ModalBox {
             this.modalBg = document.createElement('div');
             this.modalBg.classList.add('mb-modalBg')
             this.close = document.createElement('div');
+            this.close.classList.add('mb-close')
             this.modal.innerHTML = this.options.template
         } else {
             throw new Error('Template is required a String')
