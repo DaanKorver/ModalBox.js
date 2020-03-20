@@ -58,6 +58,21 @@ Currently there are ```2``` types of animations
 
  I hope to add more in the future.
 
+ Here is an example of a fully option ModalBox
+ ```javascript
+const modal = new ModalBox({
+  width: '65vw'
+  height: 400
+  template: 
+  `
+  <div>
+    <h1>Hello World</h1>
+  </div>
+  `,
+  animation: 'slide'
+})
+```
+
 
  Congrats, you just created your first ModalBox!!
 
