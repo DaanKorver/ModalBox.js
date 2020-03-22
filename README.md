@@ -61,8 +61,8 @@ Currently there are ```2``` types of animations
  Here is an example of a fully option ModalBox
  ```javascript
 const modal = new ModalBox({
-  width: '65vw'
-  height: 400
+  width: '65vw',
+  height: 400,
   template: 
   `
   <div>
