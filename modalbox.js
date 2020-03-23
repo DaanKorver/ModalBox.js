@@ -131,6 +131,8 @@ class ModalBox {
                     this.modal.style.transform = 'translate(-50%, -50%)'
                 },50)
             }
+        } else {
+            this.modal.style.opacity = '1'
         }
     }
     closeModal () {
