@@ -107,9 +107,9 @@ modal.openModal();
 
 You can bind this function to an EventListener or whatever.
 
- ### Clsoing your modal
+ ### Closing your modal
 
- Ofcourse you also need to have the ability to close your modal. There is a default close button at the top right but maybe you want to create a more creative way to close your modal.
+ Ofcourse you also need to have the ability to close your modal. There is a default close button at the top right of the modal and you can also close it by clicking on the modal background (black transparent background). But maybe you want to create a more creative way to close your modal.
 
  To close your modal you can use the following function
 ```javascript
