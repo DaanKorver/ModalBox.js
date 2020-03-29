@@ -49,7 +49,11 @@ the ``` options ``` parameter is a required object that contains some options. o
 The other options are
 
 * Width - Requires a number or string (px, percantage, vw)
+* Minwidth - Requires a number or string (px, percantage, vw)
+* Maxwidth - Requires a number or string (px, percantage, vw)
 * Height - Requires a number or string (px, percantage, vw)
+* minHeight - Requires a number or string (px, percantage, vw)
+* maxHeight - Requires a number or string (px, percantage, vw)
 * Animation - Requires a String
 
 Currently there are ```2``` types of animations
@@ -61,8 +65,12 @@ Currently there are ```2``` types of animations
  Here is an example of a fully option ModalBox
  ```javascript
 const modal = new ModalBox({
-  width: '65vw',
-  height: 400,
+  width: "60%",
+  maxWidth: 700,
+  minWidth: 350,
+  height: "50vh"
+  maxHeight: 500
+  minHeight: 300
   template: 
   `
   <div>
