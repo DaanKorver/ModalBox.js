@@ -52,6 +52,7 @@ The other options are
 * Maxwidth - Requires a number or string (px, percantage, vw)
 * Height - Requires a number or string (px, percantage, vw)
 * minHeight - Requires a number or string (px, percantage, vw)
+* Padding - Requires a number or string (px, percantage, vw)
 * maxHeight - Requires a number or string (px, percantage, vw)
 * Animation - Requires a String
 
