@@ -6,7 +6,8 @@
 
 The reason this library was created is to make the creation of modal boxes easier. ModalBox.js allows user to simply create a modal and customize it.
 
-**If you have / find any issues or bugs, please leave them behind** [here](https://github.com/DaanKorver/ModalBox.js/issues)
+**If you have / find any issues or bugs, please leave them behind** [here](https://github.com/DaanKorver/ModalBox.js/issues)  
+**You can also leave features you want to see there**
 
 ## Setup
 
