@@ -181,11 +181,11 @@ class ModalBox {
         this.modalBg.style.backgroundColor = 'rgba(0,0,0,0.6)'
 
         this.close.innerHTML = '&times;'
-        this.close.style.color = 'rgba(255,255,255,0.7)'
-        this.close.style.fontSize = '55px'
+        this.close.style.color = 'rgba(0,0,0,0.7)'
+        this.close.style.fontSize = '33px'
         this.close.style.position = 'absolute'
         this.close.style.top = '5px'
-        this.close.style.right = '20px'
+        this.close.style.right = '12px'
         this.close.style.cursor = 'pointer'
         this.close.addEventListener('click', ()=>{
             this.closeModal()
@@ -206,8 +206,8 @@ class ModalBox {
         this.modal.style.backgroundColor = '#fff'
         this.modal.style.borderRadius = '4px'
         
-        this.modalBg.appendChild(this.close)
         this.modalBg.appendChild(this.modal)
+        this.modal.appendChild(this.close)
         document.body.appendChild(this.modalBg)
     }
     
