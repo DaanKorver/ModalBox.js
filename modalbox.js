@@ -2,8 +2,6 @@ class ModalBox {
     constructor(options) {
         //Checking for options object
         this.options = options;
-        console.log(this.options);
-        
         if (typeof this.options !== 'object') {
             throw new Error('options is not defined as an Object')
             return
@@ -62,18 +60,21 @@ class ModalBox {
         }
 
         //Checking for animation
-        console.log(this.options.animation);
         if(this.options.animation) {
             switch(this.options.animation) {
                 case 'fade': 
                     this.modal.style.opacity = '0'
+                    this.modalBg.style.opacity = '0'
                     this.modal.style.transform = 'translate(-50%, -50%)'
-                    this.modal.style.transition = 'opacity 1s ease-out'
+                    this.modal.style.transition = 'opacity .3s ease-out'
+                    this.modalBg.style.transition = 'opacity .3s ease-out'
                     break;
                 case 'slide': 
                     this.modal.style.opacity = '0'
-                    this.modal.style.transform = 'translate(-50%, 0%)'
-                    this.modal.style.transition = 'opacity 1s ease-out, transform .6s ease-out'
+                    this.modalBg.style.opacity = '0'
+                    this.modal.style.transform = 'translate(-50%, -25%)'
+                    this.modal.style.transition = 'opacity .3s ease-out, transform .3s ease-out'
+                    this.modalBg.style.transition = 'opacity .3s ease-out'
                     break;
                 default:
                     throw new Error('Animation does not exist, choose between fade or slide')
@@ -92,7 +93,7 @@ class ModalBox {
         this.modalBg.style.height = '100vh'
         this.modalBg.style.maxWidth = '100%'
         this.modalBg.style.zIndex = '9999'
-        this.modalBg.style.backgroundColor = 'rgba(0,0,0,0.7)'
+        this.modalBg.style.backgroundColor = 'rgba(0,0,0,0.6)'
 
         this.close.innerHTML = '&times;'
         this.close.style.color = 'rgba(255,255,255,0.7)'
@@ -124,23 +125,27 @@ class ModalBox {
         this.modal.style.display = 'block'
         if(this.options.animation) {
             setTimeout(()=>{
+                this.modal.style.transform = 'translate(-50%, -50%)'
                 this.modal.style.opacity = '1'
+                this.modalBg.style.opacity = '1'
             },50)
-            if(this.options.animation === 'slide') {
-                setTimeout(()=>{
-                    this.modal.style.transform = 'translate(-50%, -50%)'
-                },50)
-            }
         } else {
             this.modal.style.opacity = '1'
+            this.modalBg.style.opacity = '1'
         }
     }
     closeModal () {
-        this.modalBg.style.display = 'none'
-        this.modal.style.display = 'none'
         this.modal.style.opacity = '0'
+        this.modalBg.style.opacity = '0'
+        setTimeout(()=>{
+            this.modalBg.style.display = 'none'
+            this.modal.style.display = 'none'
+        },350)
         if(this.options.animation === 'slide') {
-            this.modal.style.transform = 'translate(-50%, 0%)'
+            this.modal.style.transform = 'translate(-50%, -75%)'
+            setTimeout(()=>{
+                this.modal.style.transform = 'translate(-50%, -25%)'
+            },350)
         }
     }
 }
