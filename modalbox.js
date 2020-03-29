@@ -179,6 +179,11 @@ class ModalBox {
         this.modalBg.style.maxWidth = '100%'
         this.modalBg.style.zIndex = '9999'
         this.modalBg.style.backgroundColor = 'rgba(0,0,0,0.6)'
+        this.modalBg.addEventListener('click', (e)=>{
+            if(e.target === this.modalBg) {
+                this.closeModal()
+            }
+        })
 
         this.close.innerHTML = '&times;'
         this.close.style.color = 'rgba(0,0,0,0.7)'
